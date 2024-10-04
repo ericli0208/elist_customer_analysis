@@ -30,4 +30,4 @@ COUNTRY_CODE - 140 blank values (<1% error severity)
 - Region for one instance of US was set to "North America"; changed to "NA" to align with other North American countries
 - Region for one instance of US was set to "x"; changed to "NA"
 - Country code "BJ" (Benin) had a missing region value; researched and assigned to "EMEA" region
-- Country code "BM" (Bermuda) had a missing region value; researched and assigned to "NA" region
+- Country code "BM" (Bermuda) had a missing region value; researched and assigned to "LATAM" region
