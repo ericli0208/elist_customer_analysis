@@ -17,4 +17,13 @@ The company has a core dataset consisting of orders, order statuses, customers, 
 
 The ERD for the dataset can be found [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/ERD.md)
 
+# Deep-Dive Insights
+
+## Sales Trends
+
+## Product Trends
+
+## Loyalty Program
+
+## Refund Rates
 
