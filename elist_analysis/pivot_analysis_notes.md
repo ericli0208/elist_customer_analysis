@@ -23,4 +23,18 @@ The main points in our analysis are:
 | User (marketing channel, account creation method, account creation date, loyalty program) |
 | Platform (purchase platform, registration platform) |
 
+### Metrics Broken Down (Pivot Functions)
+| Metrics | Pivot Info |
+|---|---|
+| Number of Orders | Count of Order_ID |
+| Total Sales (USD)  | Sum of USD_Price |
+| Average Order Value (AOV) | Average of USD_Price | 
+| Time to Ship | Ship_TS - Purchase_TS_CLEANED (# Days) |
+| Time to Deliver | Delivery_TS - Ship_TS (# Days) |
+| Refund Rate | Average of Refunded (%) |
+| Growth Rate | (Current Month Value - Previous Month Value) / Previous Month Value <br> OR <br> (Current Month Value / Previous Month Value) - 1 |
 
+## Findings
+
+### What were the overall trends in sales during this time? 
+#### 
