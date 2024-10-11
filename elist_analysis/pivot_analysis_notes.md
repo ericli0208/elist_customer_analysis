@@ -38,4 +38,9 @@ The main points in our analysis are:
 
 See the full Excel pivot analysis [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/elist_analysis/elist_analysis.xlsx)
 ### What were the overall trends in sales during this time? 
+
+![image](https://github.com/user-attachments/assets/1611fe9f-ed65-40b8-9f18-89cc310b4c13)
+![image](https://github.com/user-attachments/assets/b7f7bc8b-31bf-4ce5-854e-e15c6d80b906)
+
+
 #### 
