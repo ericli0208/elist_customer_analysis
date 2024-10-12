@@ -48,7 +48,7 @@ See the full Excel pivot analysis [here](https://github.com/ericli0208/elist_cus
 ### What were our monthly and yearly growth rates? *(focusing on sales, average order value (AOV), and product count)*
 ![image](https://github.com/user-attachments/assets/d5bd2c9d-86b8-487e-92dc-7796982a62fa)
 ![image](https://github.com/user-attachments/assets/b7f7bc8b-31bf-4ce5-854e-e15c6d80b906)
-- **Annual View**: From 2019 to 2022, average number of sales per year was 27K, with average yearly sale revenue of $7M and average order value of $254. 2021 saw the highest number of sales (36K), but 2020 had on average the most expensive sales (AOV of $300).
+- **Annual View**: From 2019 to 2022, average number of sales per year was 27K, with average yearly sale revenue of $7M and average order value of $254. 2021 saw the highest number of sales (36K), but 2020 had on average the most expensive sales (AOV of $300). The average order value rose by 31% in 2020 but has since returned to pre-pandemic levels.
 - **Month View**: Elist sees consistent, year-to-year surges in sales in Q4, suggesting opportunities to increase holiday and end of year marketing campaigns. The worst sales months are in January and September, where sales drop ~27% on average. These are key timeframes to improve on moving forward. 
 - **Growth Rates View**: 2020 had by far the highest growth rate, with more than double the number of sales and the total sales revenue than 2019. On average, 2020 sales were also 31% more expensive than 2019 sales. While 2021 exhibited positive growth in the number of sales, total sales revenue went down, as people purchased items that were an average of 15% less expensive than in 2021.
   
