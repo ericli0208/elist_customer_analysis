@@ -34,10 +34,10 @@ ORDER BY country_code DESC
 LIMIT 10; 
 
 -- What is the total number of orders by shipping month, sorted from most recent to oldest?
-SELECT EXTRACT(MONTH FROM ship_ts) AS shipping_month,
-  COUNT(order_id) AS num_orders
+SELECT DATE_TRUNC(ship_ts, MONTH) AS shipping_month,
+  COUNT(distinct order_id) AS num_orders
 FROM elistcore.core.order_status
-GROUP BY 1
+GROUP BY 1, 2
 ORDER BY 1 DESC;
 
 -- What is the average order value by year? Can you round the results to 2 decimals?
