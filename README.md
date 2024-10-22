@@ -25,7 +25,7 @@ Initial data cleaning log can be found here [here](https://github.com/ericli0208
 ### Sales Trends
 ![image](https://github.com/user-attachments/assets/1611fe9f-ed65-40b8-9f18-89cc310b4c13)
 ![image](https://github.com/user-attachments/assets/7019f634-0505-43ba-afbd-33d6e395aa36)
-- **Product View**: Apple Airpods are the most popular product by order count at 45% of total orders. The 27in 4K Gaming Monitor is Elist's top revenue generating product at almost $10M in total sales. Ultimately, Elist should prioritize marketing for the Airpods, Gaming Monitor, Macbook Air, and ThinkPad Laptop, as these 4 products are the top revenue generators at 96% total revenue.
+- **Product View**: Apple Airpods are the most popular product by order count at 45% of total orders. The 27in 4K Gaming Monitor is Elist's top revenue generating product at almost $10M in total sales. 
 - **Region View**: LATAM and APAC were the regions with lowest sales percentages at 6% and 12% respectively. However, APAC appears to have the highest average order value (AOV) by a significant margin at $280. Increasing brand reach within the APAC region could potentially drive future sales growth.
 - **Country View**: Of the 191 total countries ordering on Elist, the top 20 produced 87% of total sales revenue at $24.5M. Elist should continue targeting these countries in order to maintain strong sales presence. Additional analysis from country to country may be useful in identifying similarities in sales data based on proximity and region. Furthermore, the highlighted countries could serve as a "hub" for increased product and consumer awareness to nearby/adjacent countries.
 
@@ -39,8 +39,9 @@ Initial data cleaning log can be found here [here](https://github.com/ericli0208
   
 ### Loyalty Program
 ![image](https://github.com/user-attachments/assets/2c8dc258-ae61-427b-a025-a31d113fc6c4)
+![image](https://github.com/user-attachments/assets/d55c035a-c5f8-477a-acb2-4d460073ebc1)
 
-During 2019 and 2020, loyalty program customers made fewer purchases than non-loyalty program customers, and their purchases were less expensive than non-loyalty customers. However, in more recent years (2021-2022), loyalty customers not only made more purchases than non-loyalty customers, but also purchased about $30 more on average in 2022. 
+During 2019 and 2020, loyalty program customers made fewer purchases than non-loyalty program customers, and their purchases were less expensive than non-loyalty customers. However, in more recent years (2021-2022), loyalty customers not only made more purchases than non-loyalty customers, but also purchased about $30 more on average in 2022. The loyalty program has seen significant growth over the past few years; members contributed 9% of of total sales revenue in 2019, which grew to 57% in 2022. The direct marketing channel appears to be the most effective method, for both non-loyalty (82% of total orders) and loyalty members (72%). 
 
 ### Refund Rates
 ![image](https://github.com/user-attachments/assets/73332417-5e14-4ec1-8955-31b5506764f5)
@@ -51,7 +52,7 @@ During 2019 and 2020, loyalty program customers made fewer purchases than non-lo
 By product, The ThinkPad Laptop (12%) and Macbook Air Laptop (11%) have the highest refund rates, while the Apple Airpods Headphones (2,636) and 27in 4K Gaming Monitor (1,444) have the highest number of refunds.
 
 ## Recommendations 
-- Product:
-- Loyalty Program:
-- Marketing:
-- Refund: 
+- **Product**: Continue prioritizing marketing incentives on the Airpods, Gaming Monitor, Macbook Air, and ThinkPad Laptop, as these 4 products are the top revenue generators at 96% total revenue.
+- **Loyalty Program**: Offer consistent campaigns to increase loyalty program acquisition and customer lifetime value of existing members using promotions, one-time offers, and free shipping. 
+- **Marketing**: Continue to make investments into the direct and email marketing channels. These continue to provide strong growth and contributions to sales. Consider decreasing marketing efforts on social media channels as sales attributed to these channels have accounted for less than 2% of total sales traditionally and declining even further in recent years.
+- **Refund**: Investigate the reason for high refund rates associated with the ThinkPad and Macbook Air Laptops. 
