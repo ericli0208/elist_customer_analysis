@@ -49,3 +49,9 @@ During 2019 and 2020, loyalty program customers made fewer purchases than non-lo
 2020 had the highest amount of refunds at 10%, while 2022 had the lowest at 0%. Further determination is needed for why 2022 yielded no returns throughout the year, which may indicate a data input/completeness error. 
 
 By product, The ThinkPad Laptop (12%) and Macbook Air Laptop (11%) have the highest refund rates, while the Apple Airpods Headphones (2,636) and 27in 4K Gaming Monitor (1,444) have the highest number of refunds.
+
+## Recommendations 
+- Product:
+- Loyalty Program:
+- Marketing:
+- Refund: 
