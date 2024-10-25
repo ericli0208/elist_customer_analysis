@@ -70,7 +70,7 @@ Initial data cleaning log can be found here [here](https://github.com/ericli0208
 ### Growth Rates
 ![image](https://github.com/user-attachments/assets/76eaa1b4-ba29-4652-9eca-f113d4f60f64)
 ![image](https://github.com/user-attachments/assets/bacdea10-d904-40c7-9ec6-39fcf73115c0)
-![image](https://github.com/user-attachments/assets/8d681638-86fe-4837-8001-66821741cb2d)
+![image](https://github.com/user-attachments/assets/3b030f6e-adcd-4935-9c0f-1f20ee5158a6)
 ![image](https://github.com/user-attachments/assets/62974b20-c8c3-4aeb-b770-1bd90faf6fa2)
 
 - **Annual View**: From 2019 to 2022, average number of sales per year was 27K, with average yearly sale revenue of $7M and average order value of $254. 2021 saw the highest number of sales (36K), but 2020 had on average the most expensive sales (AOV of $300). Also interesting to note is the high overall sales activity occurring in 2020 compared to all other years, suggesting a spike in sales during the pandemic. The average order value rose by 31% in 2020 but has since returned to pre-pandemic levels.
