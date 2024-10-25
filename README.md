@@ -20,18 +20,57 @@ The ERD for the dataset can be found [here](https://github.com/ericli0208/elist_
 ## Deep-Dive Insights
 
 ### Overview
+
+#### Initial Request
+
+The main points in our analysis are:
+- What were the overall trends in sales during this time?
+- What were our monthly and yearly growth rates? *(focusing on sales, average order value (AOV), and product count)*
+- How is the new loyalty program performing? Should we keep using it? *(focusing on sales, average order value (AOV), and product count)*
+- What were our refund rates and average order values? *(focusing on Apple products and also including number of refunds as a metric)*
+
+| North Star Metrics  |
+|---|
+| Number of Orders |
+| Total Sales (USD)  |
+| Average Order Value (AOV) |
+| Time to Ship |
+| Time to Deliver |
+| Refund Rate |
+
+| Key Dimensions | 
+|---|
+| Time (month, quarter, year) |
+|  Geography (country, region, currency |
+| Product (item, brand) |
+| User (marketing channel, account creation method, account creation date, loyalty program) |
+| Platform (purchase platform, registration platform) |
+
+#### Metrics Broken Down (Pivot Functions)
+| Metrics | Pivot Info |
+|---|---|
+| Number of Orders | Count of Order_ID |
+| Total Sales (USD)  | Sum of USD_Price |
+| Average Order Value (AOV) | Average of USD_Price | 
+| Time to Ship | Ship_TS - Purchase_TS_CLEANED (# Days) |
+| Time to Deliver | Delivery_TS - Ship_TS (# Days) |
+| Refund Rate | Average of Refunded (%) |
+| Growth Rate | (Current Month Value - Previous Month Value) / Previous Month Value <br> OR <br> (Current Month Value / Previous Month Value) - 1 |
 Initial data cleaning log can be found here [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/source_data/elist_issue_log.xlsx)
 
 ### Sales Trends
 ![image](https://github.com/user-attachments/assets/1611fe9f-ed65-40b8-9f18-89cc310b4c13)
 ![image](https://github.com/user-attachments/assets/7019f634-0505-43ba-afbd-33d6e395aa36)
+
 - **Product View**: Apple Airpods are the most popular product by order count at 45% of total orders. The 27in 4K Gaming Monitor is Elist's top revenue generating product at almost $10M in total sales. 
 - **Region View**: LATAM and APAC were the regions with lowest sales percentages at 6% and 12% respectively. However, APAC appears to have the highest average order value (AOV) by a significant margin at $280. Increasing brand reach within the APAC region could potentially drive future sales growth.
 - **Country View**: Of the 191 total countries ordering on Elist, the top 20 produced 87% of total sales revenue at $24.5M. Elist should continue targeting these countries in order to maintain strong sales presence. Additional analysis from country to country may be useful in identifying similarities in sales data based on proximity and region. Furthermore, the highlighted countries could serve as a "hub" for increased product and consumer awareness to nearby/adjacent countries.
 
 ### Growth Rates
-![image](https://github.com/user-attachments/assets/d5bd2c9d-86b8-487e-92dc-7796982a62fa)
+![image](https://github.com/user-attachments/assets/76eaa1b4-ba29-4652-9eca-f113d4f60f64)
+![image](https://github.com/user-attachments/assets/bacdea10-d904-40c7-9ec6-39fcf73115c0)
 ![image](https://github.com/user-attachments/assets/8d681638-86fe-4837-8001-66821741cb2d)
+![image](https://github.com/user-attachments/assets/62974b20-c8c3-4aeb-b770-1bd90faf6fa2)
 
 - **Annual View**: From 2019 to 2022, average number of sales per year was 27K, with average yearly sale revenue of $7M and average order value of $254. 2021 saw the highest number of sales (36K), but 2020 had on average the most expensive sales (AOV of $300). Also interesting to note is the high overall sales activity occurring in 2020 compared to all other years, suggesting a spike in sales during the pandemic. The average order value rose by 31% in 2020 but has since returned to pre-pandemic levels.
 - **Month View**: Elist sees consistent, year-to-year surges in sales in Q4, suggesting opportunities to increase holiday and end of year marketing campaigns. The worst sales months are in February and October, where sales drop ~27% on average. These are key timeframes to improve on moving forward. 
@@ -50,6 +89,9 @@ During 2019 and 2020, loyalty program customers made fewer purchases than non-lo
 2020 had the highest amount of refunds at 10%, while 2022 had the lowest at 0%. Further determination is needed for why 2022 yielded no returns throughout the year, which may indicate a data input/completeness error. 
 
 By product, The ThinkPad Laptop (12%) and Macbook Air Laptop (11%) have the highest refund rates, while the Apple Airpods Headphones (2,636) and 27in 4K Gaming Monitor (1,444) have the highest number of refunds.
+
+
+**For additional pivot analysis, please reference the [in-depth analysis notes](https://github.com/ericli0208/elist_customer_analysis/blob/main/elist_analysis/pivot_analysis_notes.md).**
 
 ## Recommendations 
 - **Product**: Continue prioritizing marketing incentives on the Airpods, Gaming Monitor, Macbook Air, and ThinkPad Laptop, as these 4 products are the top revenue generators at 96% total revenue.
