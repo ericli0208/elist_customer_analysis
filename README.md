@@ -63,6 +63,7 @@ Initial data cleaning log can be found here [here](https://github.com/ericli0208
 ![image](https://github.com/user-attachments/assets/1611fe9f-ed65-40b8-9f18-89cc310b4c13)
 ![image](https://github.com/user-attachments/assets/f1bbbfa4-6fca-4c90-aba6-21ca8e5a442f)
 ![image](https://github.com/user-attachments/assets/7019f634-0505-43ba-afbd-33d6e395aa36)
+![image](https://github.com/user-attachments/assets/283f1e66-1d88-4414-942a-f3c199f92395)
 
 - **Product View**: Apple Airpods are the most popular product by order count at 45% of total orders. The 27in 4K Gaming Monitor is Elist's top revenue generating product at almost $10M in total sales. 
 - **Region View**: LATAM and APAC were the regions with lowest sales percentages at 6% and 12% respectively. However, APAC appears to have the highest average order value (AOV) by a significant margin at $280. Increasing brand reach within the APAC region could potentially drive future sales growth.
