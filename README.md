@@ -70,7 +70,7 @@ Initial data cleaning log can be found here [here](https://github.com/ericli0208
 
 ### Growth Rates
 ![image](https://github.com/user-attachments/assets/76eaa1b4-ba29-4652-9eca-f113d4f60f64)
-![image](https://github.com/user-attachments/assets/bacdea10-d904-40c7-9ec6-39fcf73115c0)
+![image](https://github.com/user-attachments/assets/1f7c5d9f-a5f2-46c0-8771-fd71b423a3ce)
 ![image](https://github.com/user-attachments/assets/3b030f6e-adcd-4935-9c0f-1f20ee5158a6)
 ![image](https://github.com/user-attachments/assets/62974b20-c8c3-4aeb-b770-1bd90faf6fa2)
 
