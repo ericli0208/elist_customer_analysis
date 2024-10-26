@@ -56,6 +56,7 @@ The main points in our analysis are:
 | Time to Deliver | Delivery_TS - Ship_TS (# Days) |
 | Refund Rate | Average of Refunded (%) |
 | Growth Rate | (Current Month Value - Previous Month Value) / Previous Month Value <br> OR <br> (Current Month Value / Previous Month Value) - 1 |
+
 Initial data cleaning log can be found here [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/source_data/elist_issue_log.xlsx)
 
 ### Sales Trends
