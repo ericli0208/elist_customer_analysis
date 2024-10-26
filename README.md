@@ -78,21 +78,20 @@ Initial data cleaning log can be found here [here](https://github.com/ericli0208
 - **Growth Rates View**: 2020 had by far the highest growth rate, with more than double the number of sales and the total sales revenue than 2019. On average, 2020 sales were also 31% more expensive than 2019 sales. While 2021 exhibited positive growth in the number of sales, total sales revenue went down, as people purchased items that were an average of 15% less expensive than in 2021.
   
 ### Loyalty Program
-![image](https://github.com/user-attachments/assets/2c8dc258-ae61-427b-a025-a31d113fc6c4)
-![image](https://github.com/user-attachments/assets/d55c035a-c5f8-477a-acb2-4d460073ebc1)
+![image](https://github.com/user-attachments/assets/e4678443-b5be-4013-bafe-84d72f19a12a)
+![image](https://github.com/user-attachments/assets/5972794d-5e2c-46da-96eb-e979f68903d5)
+![image](https://github.com/user-attachments/assets/b0e5ca17-2151-431f-8752-e51b494f6b6f)
+![image](https://github.com/user-attachments/assets/5e16f809-71d7-4827-8d4b-621d1b4ec280)
 
 During 2019 and 2020, loyalty program customers made fewer purchases than non-loyalty program customers, and their purchases were less expensive than non-loyalty customers. However, in more recent years (2021-2022), loyalty customers not only made more purchases than non-loyalty customers, but also purchased about $30 more on average in 2022. The loyalty program has seen significant growth over the past few years; members contributed 9% of of total sales revenue in 2019, which grew to 57% in 2022. The direct marketing channel appears to be the most effective method, for both non-loyalty (82% of total orders) and loyalty members (72%). 
 
 ### Refund Rates
-![image](https://github.com/user-attachments/assets/73332417-5e14-4ec1-8955-31b5506764f5)
-![image](https://github.com/user-attachments/assets/9ab53f93-f9b3-46e4-975e-4da13a257202)
+![image](https://github.com/user-attachments/assets/44090d65-4065-4362-9339-a2bf0360ef9b)
+![image](https://github.com/user-attachments/assets/d82fdd81-dba4-4bf5-98f2-8b26c149fc4a)
 
 2020 had the highest amount of refunds at 10%, while 2022 had the lowest at 0%. Further determination is needed for why 2022 yielded no returns throughout the year, which may indicate a data input/completeness error. 
 
 By product, The ThinkPad Laptop (12%) and Macbook Air Laptop (11%) have the highest refund rates, while the Apple Airpods Headphones (2,636) and 27in 4K Gaming Monitor (1,444) have the highest number of refunds.
-
-
-**For additional pivot analysis, please reference the [in-depth analysis notes](https://github.com/ericli0208/elist_customer_analysis/blob/main/elist_analysis/pivot_analysis_notes.md).**
 
 ## Recommendations 
 - **Product**: Continue prioritizing marketing incentives on the Airpods, Gaming Monitor, Macbook Air, and ThinkPad Laptop, as these 4 products are the top revenue generators at 96% total revenue.
