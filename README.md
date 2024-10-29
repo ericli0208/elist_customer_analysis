@@ -96,7 +96,17 @@ During 2019 and 2020, loyalty program customers made fewer purchases than non-lo
 By product, The ThinkPad Laptop (12%) and Macbook Air Laptop (11%) have the highest refund rates, while the Apple Airpods Headphones (2,636) and 27in 4K Gaming Monitor (1,444) have the highest number of refunds.
 
 ## Recommendations 
-- **Product**: Continue prioritizing marketing incentives on the Airpods, Gaming Monitor, Macbook Air, and ThinkPad Laptop, as these 4 products are the top revenue generators at 96% total revenue.
-- **Loyalty Program**: Offer consistent campaigns to increase loyalty program acquisition and customer lifetime value of existing members using promotions, one-time offers, and free shipping. 
-- **Marketing**: Continue to make investments into the direct and email marketing channels. These continue to provide strong growth and contributions to sales. Consider decreasing marketing efforts on social media channels as sales attributed to these channels have accounted for less than 2% of total sales traditionally and declining even further in recent years.
-- **Refund**: Investigate the reason for high refund rates associated with the ThinkPad and Macbook Air Laptops. 
+### Product
+- Continue prioritizing marketing incentives on the Airpods, Gaming Monitor, Macbook Air, and ThinkPad Laptop, as these 4 products are the top revenue generators at 97% total revenue.
+- Diversify the product portfolio and perform usability and focus group testing to expand into new product lines (i.e. Apple charging cables), in order to provide high upsell opportunities for existing products. 
+### Loyalty Program
+- Offer consistent campaigns to increase loyalty program acquisition and customer lifetime value of existing members using promotions, one-time offers, and free shipping.
+- In order to convert non-members, consider offering a one-time sign-up discount paired with increased general marketing of membership benefits and savings.
+### Marketing
+- Continue to make investments into the direct and email marketing channels. These continue to provide strong growth and contributions to sales.
+- Consider decreasing marketing efforts on social media channels as sales attributed to these channels have accounted for less than 2% of total sales traditionally and declining even further in recent years.
+- Plan and execute special promotions, launches, and events in historically underperforming months (February and October) in order to boost overall sales.
+### Refunds
+- Investigate the reason for high refund rates associated with the Apple iPhone, Gaming Monitor, ThinkPad and Macbook Air Laptops.
+- Plan for strategies to improve overall customer satisfaction (updating product descriptions, building online customer review sections, implementing stricter product quality checks, etc). 
+- Confirm whether a no-refund policy was implemented or if no data was collected in 2022.
