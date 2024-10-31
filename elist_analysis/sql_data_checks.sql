@@ -1,70 +1,108 @@
 -- ELIST ANALYSIS  - INITIAL DATA CHECKS
+-- Utilizing dataset for the first time, performing checks for inconsistencies, errors, and general data ranges
 
--- What is the date of the earliest and latest order?
+--  Duplicate Orders Check
+SELECT
+    orders.id,
+    COUNT(*) AS order_id_count
+FROM elistcore.core.orders
+GROUP BY 1
+HAVING order_id_count > 1;
+
+-- Null Checks / Counts
+SELECT
+    SUM(CASE WHEN orders.customer_id IS NULL THEN 1 ELSE 0 END) AS nullcount_cust_id,
+    SUM(CASE WHEN orders.id IS NULL THEN 1 ELSE 0 END) AS nullcount_order_id,
+    SUM(CASE WHEN orders.purchase_ts IS NULL THEN 1 ELSE 0 END) AS nullcount_purchase_ts,
+    SUM(CASE WHEN orders.product_id IS NULL THEN 1 ELSE 0 END) AS nullcount_product_id,
+    SUM(CASE WHEN orders.product_name IS NULL THEN 1 ELSE 0 END) AS nullcount_product_name,
+    SUM(CASE WHEN orders.currency IS NULL THEN 1 ELSE 0 END) AS nullcount_currency,
+    SUM(CASE WHEN orders.local_price IS NULL THEN 1 ELSE 0 END) AS nullcount_local_price,
+    SUM(CASE WHEN orders.usd_price IS NULL THEN 1 ELSE 0 END) AS nullcount_usd_price,
+    SUM(CASE WHEN orders.purchase_platform IS NULL THEN 1 ELSE 0 END) AS nullcount_purchase_platform
+FROM elistcore.core.orders;
+
+-- Checking Distinct Product Names, Purchase Platforms, Countries & Regions, Marketing Platforms, and Loyalty Designation For Familiarity And Finding Irregularities 
+
+SELECT
+    DISTINCT product_name
+FROM elistcore.core.orders
+ORDER BY 1;
+
+SELECT
+    DISTINCT purchase_platform
+FROM elistcore.core.orders
+ORDER BY 1;
+
+SELECT
+    DISTINCT customers.country_code,
+    geo_lookup.region
+FROM elistcore.core.customers
+LEFT JOIN elistcore.core.geo_lookup
+ON customers.country_code = geo_lookup.country
+ORDER BY 1;
+
+SELECT
+    DISTINCT customers.country_code,
+    COUNT(customers.country_code) AS countnull
+FROM elistcore.core.customers
+LEFT JOIN elistcore.core.geo_lookup
+ON customers.country_code = geo_lookup.country 
+WHERE geo_lookup.region IS NULL
+GROUP BY 1;
+
+SELECT
+    DISTINCT marketing_channel,
+    COUNT(marketing_channel) AS count_of_marketing
+FROM elistcore.core.customers
+GROUP BY 1
+ORDER BY 1;
+
+SELECT
+    DISTINCT loyalty_program
+FROM elistcore.core.customers
+ORDER BY 1;
+
+-- Purchase, Shipping, Delivery, Refund, and Account Created Date Ranges To Understand Time Frames
+
+SELECT
+    MIN(purchase_ts) AS earliest_order_date,
+    MAX(purchase_ts) AS latest_order_date,
+    MIN(ship_ts) AS earliest_ship_date,
+    MAX(ship_ts) AS latest_ship_date,
+    MIN(delivery_ts) AS earliest_delivery_date,
+    MAX(delivery_ts) AS latest_delivery_date,
+    MIN(refund_ts) AS earliest_return_date,
+    MAX(refund_ts) AS latest_return_date
+FROM elistcore.core.order_status;
+
+SELECT
+    MIN(created_on) AS earliest_created_on,
+    MAX(created_on) AS latest_created_on
+FROM elistcore.core.customers;
+
+-- Price Ranges, Count of $0 Orders
+SELECT
+    MIN(usd_price) AS smallest_price,
+    MAX(usd_price) AS largest_price
+FROM elistcore.core.orders;
+
+SELECT
+    usd_price,
+    COUNT(*) AS count_of_orders
+FROM elistcore.core.orders
+WHERE usd_price = 0
+GROUP BY 1;
+
+-- Date Ranges
 SELECT MAX(purchase_ts) latest_order, 
   MIN(purchase_ts) earliest_order
 FROM elistcore.core.orders; 
 
--- What is the average order value for purchases made in USD across all years?
+-- AOV in USD
 SELECT AVG(usd_price) aov
 FROM elistcore.core.orders
 WHERE currency = 'USD'
 AND EXTRACT(YEAR FROM purchase_ts) = 2019; 
 --and purchase_ts between '2019-01-01' and '2020-01-01'
 --and purchase_ts >= '2019-01-01' and purchase_ts <= '2019-12-31'
-
--- Return the id, loyalty program status, and account creation date for customers who made an account on desktop or mobile. Rename the columns to more descriptive names.
-SELECT id AS customer_id, 
-  loyalty_program AS is_loyalty_program, 
-  created_on AS account_creation_date
-FROM elistcore.core.customers
-WHERE account_creation_method IN ('desktop', 'mobile');
-
--- What are all the unique products that were sold in AUD on website, sorted alphabetically?
-SELECT DISTINCT product_name
-FROM elistcore.core.orders
-WHERE currency = 'AUD'
-AND purchase_platform = 'website'
-ORDER BY product_name; 
-
--- What are the first 10 countries in the North American region, sorted in descending alphabetical order?
-SELECT * 
-FROM elistcore.core.geo_lookup
-WHERE region = 'NA'
-ORDER BY country_code DESC
-LIMIT 10; 
-
--- What is the total number of orders by shipping month, sorted from most recent to oldest?
-SELECT DATE_TRUNC(ship_ts, MONTH) AS shipping_month,
-  COUNT(distinct order_id) AS num_orders
-FROM elistcore.core.order_status
-GROUP BY 1, 2
-ORDER BY 1 DESC;
-
--- What is the average order value by year? Can you round the results to 2 decimals?
-SELECT EXTRACT(YEAR FROM purchase_ts) AS year, 
-  ROUND(AVG(usd_price), 2) AS aov
-FROM elistcore.core.orders
-GROUP BY 1
-ORDER BY 1;
-
--- Create a helper column `is_refund`  in the `order_status`  table that returns 1 if there is a refund, 0 if not. Return the first 20 records.
-SELECT *, 
-  CASE WHEN refund_ts IS NOT NULL THEN 1 ELSE 0 END AS is_refund
-FROM core.order_status
-LIMIT 20;
-
--- Return the product IDs and product names of all Apple products.
-SELECT product_id, product_name
-FROM elistcore.core.orders
-WHERE product_name IN ('Apple Airpods Headphones','Apple iPhone','Macbook Air Laptop');
--- WHERE product_name LIKE '%Apple%' OR product_name = 'Macbook Air Laptop'
-
--- Calculate the time to ship in days for each order and return all original columns from the table.
-SELECT *, 
-  DATE_DIFF(ship_ts,purchase_ts, day) AS days_to_ship
-FROM elistcore.core.order_status; 
-
-
-
-
