@@ -11,7 +11,7 @@ WHERE account_creation_method IN ('desktop', 'mobile');
 SELECT DISTINCT currency,
   COUNT(id) as count_of_orders
 FROM elistcore.core.orders
--- WHERE currency IS NOT NULL (why is there 54 orders with null currency?)
+WHERE currency IS NOT NULL
 GROUP BY 1
 ORDER BY 1;  
 
