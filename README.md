@@ -15,7 +15,9 @@ There is an upcoming company-wide town hall, in which leadership would like to p
   
 The company has a core dataset consisting of orders, order statuses, customers, products, and geographic information. 
 
-The ERD for the dataset can be found [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/ERD.md)
+The ERD for the dataset can be found [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/ERD.md).
+
+All analysis files (Excel and SQL) can be found [here](https://github.com/ericli0208/elist_customer_analysis/tree/main/elist_analysis).
 
 ## Deep-Dive Insights
 
@@ -57,7 +59,8 @@ The main points in our analysis are:
 | Refund Rate | Average of Refunded (%) |
 | Growth Rate | (Current Month Value - Previous Month Value) / Previous Month Value <br> OR <br> (Current Month Value / Previous Month Value) - 1 |
 
-Initial data cleaning log can be found here [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/source_data/elist_issue_log.xlsx)
+Initial data cleaning log can be found [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/source_data/elist_issue_log.xlsx)
+The Excel file with analysis can be found 
 
 ### Sales Trends
 ![image](https://github.com/user-attachments/assets/1611fe9f-ed65-40b8-9f18-89cc310b4c13)
@@ -94,6 +97,11 @@ During 2019 and 2020, loyalty program customers made fewer purchases than non-lo
 2020 had the highest amount of refunds at 10%, while 2022 had the lowest at 0%. Further determination is needed for why 2022 yielded no returns throughout the year, which may indicate a data input/completeness error. 
 
 By product, The ThinkPad Laptop (12%) and Macbook Air Laptop (11%) have the highest refund rates, while the Apple Airpods Headphones (2,636) and 27in 4K Gaming Monitor (1,444) have the highest number of refunds.
+
+### Additional SQL Insights
+- Loyalty members had a lower average **time to purchase** (between the account creation date and first purchase) at 50 days, while non-loyalty members averaged around 70 days. 
+- Apple Airpods Headphones were the most popular product across all regions (the highest was 18K units sold in North America).
+- In North America, Macbook sales averaged 98 units and $155K in revenue per quarter.
 
 ## Recommendations 
 ### Product
