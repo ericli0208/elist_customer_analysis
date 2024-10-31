@@ -11,19 +11,18 @@ HAVING order_id_count > 1;
 
 -- Null Checks / Counts
 SELECT
-    SUM(CASE WHEN orders.customer_id IS NULL THEN 1 ELSE 0 END) AS nullcount_cust_id,
-    SUM(CASE WHEN orders.id IS NULL THEN 1 ELSE 0 END) AS nullcount_order_id,
-    SUM(CASE WHEN orders.purchase_ts IS NULL THEN 1 ELSE 0 END) AS nullcount_purchase_ts,
-    SUM(CASE WHEN orders.product_id IS NULL THEN 1 ELSE 0 END) AS nullcount_product_id,
-    SUM(CASE WHEN orders.product_name IS NULL THEN 1 ELSE 0 END) AS nullcount_product_name,
-    SUM(CASE WHEN orders.currency IS NULL THEN 1 ELSE 0 END) AS nullcount_currency,
-    SUM(CASE WHEN orders.local_price IS NULL THEN 1 ELSE 0 END) AS nullcount_local_price,
-    SUM(CASE WHEN orders.usd_price IS NULL THEN 1 ELSE 0 END) AS nullcount_usd_price,
-    SUM(CASE WHEN orders.purchase_platform IS NULL THEN 1 ELSE 0 END) AS nullcount_purchase_platform
+    SUM(CASE WHEN customer_id IS NULL THEN 1 ELSE 0 END) AS nullcount_cust_id,
+    SUM(CASE WHEN id IS NULL THEN 1 ELSE 0 END) AS nullcount_order_id,
+    SUM(CASE WHEN purchase_ts IS NULL THEN 1 ELSE 0 END) AS nullcount_purchase_ts,
+    SUM(CASE WHEN product_id IS NULL THEN 1 ELSE 0 END) AS nullcount_product_id,
+    SUM(CASE WHEN product_name IS NULL THEN 1 ELSE 0 END) AS nullcount_product_name,
+    SUM(CASE WHEN currency IS NULL THEN 1 ELSE 0 END) AS nullcount_currency,
+    SUM(CASE WHEN local_price IS NULL THEN 1 ELSE 0 END) AS nullcount_local_price,
+    SUM(CASE WHEN usd_price IS NULL THEN 1 ELSE 0 END) AS nullcount_usd_price,
+    SUM(CASE WHEN purchase_platform IS NULL THEN 1 ELSE 0 END) AS nullcount_purchase_platform
 FROM elistcore.core.orders;
 
 -- Checking Distinct Product Names, Purchase Platforms, Countries & Regions, Marketing Platforms, and Loyalty Designation For Familiarity And Finding Irregularities 
-
 SELECT
     DISTINCT product_name
 FROM elistcore.core.orders
@@ -64,7 +63,6 @@ FROM elistcore.core.customers
 ORDER BY 1;
 
 -- Purchase, Shipping, Delivery, Refund, and Account Created Date Ranges To Understand Time Frames
-
 SELECT
     MIN(purchase_ts) AS earliest_order_date,
     MAX(purchase_ts) AS latest_order_date,
@@ -93,16 +91,6 @@ SELECT
 FROM elistcore.core.orders
 WHERE usd_price = 0
 GROUP BY 1;
-
--- Date Ranges
-SELECT MAX(purchase_ts) latest_order, 
-  MIN(purchase_ts) earliest_order
-FROM elistcore.core.orders; 
-
--- AOV in USD
-SELECT AVG(usd_price) aov
-FROM elistcore.core.orders
-WHERE currency = 'USD'
 AND EXTRACT(YEAR FROM purchase_ts) = 2019; 
 --and purchase_ts between '2019-01-01' and '2020-01-01'
 --and purchase_ts >= '2019-01-01' and purchase_ts <= '2019-12-31'
