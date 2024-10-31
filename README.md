@@ -85,7 +85,7 @@ The Excel file with analysis can be found
 ### Loyalty Program
 ![image](https://github.com/user-attachments/assets/e4678443-b5be-4013-bafe-84d72f19a12a)
 ![image](https://github.com/user-attachments/assets/5972794d-5e2c-46da-96eb-e979f68903d5)
-![image](https://github.com/user-attachments/assets/b0e5ca17-2151-431f-8752-e51b494f6b6f)
+![image](https://github.com/user-attachments/assets/15c9f06b-8c79-4615-8314-e00fa788e527)
 ![image](https://github.com/user-attachments/assets/5e16f809-71d7-4827-8d4b-621d1b4ec280)
 
 During 2019 and 2020, loyalty program customers made fewer purchases than non-loyalty program customers, and their purchases were less expensive than non-loyalty customers. However, in more recent years (2021-2022), loyalty customers not only made more purchases than non-loyalty customers, but also purchased about $30 more on average in 2022. The loyalty program has seen significant growth over the past few years; members contributed 9% of of total sales revenue in 2019, which grew to 57% in 2022. The direct marketing channel appears to be the most effective method, for both non-loyalty (82% of total orders) and loyalty members (72%). 
