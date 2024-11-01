@@ -71,6 +71,25 @@ AND g.region= 'NA'
 GROUP BY 1, 2
 ORDER BY 1, 2;
 
+-- What is the average quarterly order count and total sales for Macbooks sold in NA?
+WITH quarterly_metrics as (
+  SELECT DATE_TRUNC(o.purchase_ts, quarter) as purchase_quarter,
+    COUNT (distinct o.id) as order_count,
+    ROUND(SUM(o.usd_price), 2) as total_sales
+  FROM core.orders o
+  LEFT JOIN core.customers c
+    ON o.customer_id = c.id
+  LEFT JOIN core.geo_lookup g
+    ON c.country_code = g.country_code
+  WHERE lower(o.product_name) LIKE '%macbook%'
+    AND region = 'NA'
+  GROUP BY 1
+  ORDER BY 1 DESC ) 
+
+SELECT ROUND(AVG(order_count), 2) as avg_quarterly_orders,
+  ROUND(AVG(total_sales), 2) as avg_quarterly_sales
+FROM quarterly_metrics;
+
 -- For products purchased in 2022 on the website or products purchased on mobile in any year, which region has the average highest time to deliver? 
 SELECT g.region,
   AVG(DATE_DIFF(os.delivery_ts, os.purchase_ts, day)) as time_to_deliver
@@ -86,6 +105,21 @@ WHERE (EXTRACT(year from os.purchase_ts) = 2022 AND LOWER(o.purchase_platform) =
 GROUP BY 1
 ORDER BY 2 DESC;
 
+-- Which region had the highest time to deliver (in weeks) for website purchases made in 2022 or Samsung purchases made in 2021? 
+SELECT g.region,
+  ROUND(AVG(DATE_DIFF(os.delivery_ts, os.purchase_ts, week)), 2) as time_to_deliver_weeks
+FROM core.order_status os
+LEFT JOIN core.orders o
+  ON os.order_id = o.id
+LEFT JOIN core.customers c
+  ON o.customer_id = c.id
+LEFT JOIN core.geo_lookup g
+  ON c.country_code = g.country_code
+WHERE (EXTRACT(year from o.purchase_ts) = 2022 AND o.purchase_platform = 'website')
+  OR (EXTRACT(year from o.purchase_ts) = 2021 AND LOWER(o.product_name) LIKE 'samsung%')
+GROUP BY 1
+ORDER BY 2 DESC;
+
 -- What was the refund rate and refund count for each product overall?
 SELECT DISTINCT product_name
 FROM core.orders;
@@ -98,6 +132,17 @@ LEFT JOIN core.order_status os
   ON o.id = os.order_id
 GROUP BY 1
 ORDER BY 1;
+
+-- What was the refund rate and refund count for each product per year? 
+SELECT EXTRACT(year from o.purchase_ts) as purchase_year,
+  CASE WHEN o.product_name = '27in"" 4k gaming monitor' THEN '27in 4K gaming monitor' ELSE product_name END AS product_name_cleaned, 
+  COUNT(os.refund_ts) as refunded,
+  AVG(CASE WHEN os.refund_ts IS NOT NULL THEN 1 ELSE 0 END) * 100 as refund_rate_percent
+FROM core.orders o
+LEFT JOIN core.order_status os
+  ON o.id = os.order_id
+GROUP BY 1, 2
+ORDER BY 3 DESC;
 
 -- Within each region, what is the most popular product?
 WITH order_count_cte as (
