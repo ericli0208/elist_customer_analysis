@@ -99,9 +99,22 @@ During 2019 and 2020, loyalty program customers made fewer purchases than non-lo
 By product, The ThinkPad Laptop (12%) and Macbook Air Laptop (11%) have the highest refund rates, while the Apple Airpods Headphones (2,636) and 27in 4K Gaming Monitor (1,444) have the highest number of refunds.
 
 ### Additional SQL Insights
-- Loyalty members had a lower average **time to purchase** (between the account creation date and first purchase) at 50 days, while non-loyalty members averaged around 70 days. 
+- Loyalty members had a lower average **time to purchase** (between the account creation and first purchase date) at 50 days, while non-loyalty members averaged around 70 days. 
 - Apple Airpods Headphones were the most popular product across all regions (the highest was 18K units sold in North America).
 - In North America, Macbook sales averaged 98 units and $155K in revenue per quarter.
+- Customer and Order Count by Region is as follows (excluding null region values):
+
+| region | customer_count | order_count |
+|--------|----------------|-------------|
+| APAC   | 9,020          | 9,786       |
+| EMEA   | 21,829         | 23,766      |
+| LATAM  | 4,963          | 5,322       |
+| NA     | 38,714         | 41,874      |
+
+- Purchases made on the website and mobile app had very similar average **time to deliver** stats (between purchase and delivery date) at ~ 7.5 days
+- North America held the most Macbook sales across all years at $2,485,793.47.
+- APAC's highest purchased brand was Apple.
+- Based on average order value, social media marketing performed best for purchases made on the mobile app, and affiliate marketing performed best for purchases made on the website.
 
 ## Recommendations 
 ### Product
@@ -112,7 +125,7 @@ By product, The ThinkPad Laptop (12%) and Macbook Air Laptop (11%) have the high
 - In order to convert non-members, consider offering a one-time sign-up discount paired with increased general marketing of membership benefits and savings.
 ### Marketing
 - Continue to make investments into the direct and email marketing channels. These continue to provide strong growth and contributions to sales.
-- Consider decreasing marketing efforts on social media channels as sales attributed to these channels have accounted for less than 2% of total sales traditionally and declining even further in recent years.
+- Consider increasing marketing efforts on social media channels and through affiliates, as both yield strong average order values for mobile app and website purchases.
 - Plan and execute special promotions, launches, and events in historically underperforming months (February and October) in order to boost overall sales.
 ### Refunds
 - Investigate the reason for high refund rates associated with the Apple iPhone, Gaming Monitor, ThinkPad and Macbook Air Laptops.
