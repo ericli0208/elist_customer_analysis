@@ -262,8 +262,7 @@ WITH customer_purchase_count as(
     customer_id,
     COUNT(id) as num_purchases
   FROM core.orders
-  GROUP BY 1,2
-)
+  GROUP BY 1,2)
 
 SELECT *,
   ROW_NUMBER() OVER (PARTITION BY purchase_platform ORDER BY num_purchases DESC) as order_ranking
@@ -296,8 +295,7 @@ WITH aov_apple AS (
   LEFT JOIN core.customers c
     ON o.customer_id = c.id
   WHERE lower(product_name) LIKE '%macbook%' OR lower(product_name) LIKE '%apple%'
-  GROUP BY 1
-)
+  GROUP BY 1)
 
 SELECT *,
   ROW_NUMBER() OVER (ORDER BY aov DESC) as customer_ranking
