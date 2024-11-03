@@ -192,3 +192,130 @@ LEFT JOIN core.orders o
 LEFT JOIN core.order_status os
   ON os.order_id = o.id
 GROUP BY 1; 
+
+--  How many refunds were there for each month in 2021? What about each quarter and week?
+
+-- by month
+SELECT DATE_TRUNC(refund_ts, month) as month,
+  COUNT(refund_ts) as refunds
+FROM core.order_status
+WHERE EXTRACT(year from refund_ts) = 2021
+GROUP BY 1
+ORDER BY 1;
+
+-- by quarter
+SELECT DATE_TRUNC(refund_ts, quarter) as quarter,
+  COUNT(refund_ts) as refunds
+FROM core.order_status
+WHERE EXTRACT(year from refund_ts) = 2021
+GROUP BY 1
+ORDER BY 1;
+
+-- by week
+SELECT DATE_TRUNC(refund_ts, week) as week,
+  COUNT(refund_ts) as refunds
+FROM core.order_status
+WHERE EXTRACT(year from refund_ts) = 2021
+GROUP BY 1
+ORDER BY 1;
+
+-- For each region, what’s the total number of customers and the total number of orders? Sort alphabetically by region.
+SELECT
+  gl.region,
+  COUNT(DISTINCT cust.id) AS customer_count,
+  COUNT(DISTINCT ords.id) AS orders_count
+FROM core.orders ords
+LEFT JOIN core.customers cust
+  ON cust.id = ords.customer_id
+LEFT JOIN core.geo_lookup gl
+  ON gl.country_code = cust.country_code
+GROUP BY 1
+ORDER BY 1;
+
+-- What’s the average time to deliver for each purchase platform? 
+SELECT purchase_platform,
+  ROUND(AVG(DATE_DIFF(os.delivery_ts, os.purchase_ts, day)), 4) as avg_time_to_deliver
+FROM core.order_status os
+LEFT JOIN core.orders o
+  ON os.order_id = o.id
+GROUP BY 1; 
+
+-- What were the top 2 regions for Macbook sales in 2020? 
+
+SELECT gl.region,
+  ROUND(SUM(o.usd_price), 2) as macbook_sales
+FROM core.orders o
+LEFT JOIN core.customers c
+  ON o.customer_id = c.id
+LEFT JOIN core.geo_lookup gl
+  ON c.country_code = gl.country_code
+WHERE lower(o.product_name) LIKE '%macbook%'
+AND EXTRACT(year from purchase_ts) = 2020
+GROUP BY 1 
+ORDER BY 2 DESC
+LIMIT 2;
+
+-- For each purchase platform, return the top 3 customers by the number of purchases and order them within that platform. If there is a tie, break the tie using any order. 
+
+WITH customer_purchase_count as(
+  SELECT purchase_platform,
+    customer_id,
+    COUNT(id) as num_purchases
+  FROM core.orders
+  GROUP BY 1,2
+)
+
+SELECT *,
+  ROW_NUMBER() OVER (PARTITION BY purchase_platform ORDER BY num_purchases DESC) as order_ranking
+FROM customer_purchase_count
+QUALIFY ROW_NUMBER() OVER (PARTITION BY purchase_platform ORDER BY num_purchases DESC) <= 3;
+
+-- What was the most-purchased brand in the APAC region?
+SELECT CASE WHEN o.product_name LIKE 'Apple%' OR o.product_name LIKE 'Macbook%' THEN 'Apple'
+  WHEN o.product_name LIKE 'Samsung%' THEN 'Samsung'
+  WHEN o.product_name LIKE 'ThinkPad%' THEN 'ThinkPad'
+  WHEN o.product_name LIKE 'bose%' THEN 'Bose'
+  ELSE 'Unknown' END AS brand,
+  COUNT(o.id) as order_count,
+FROM core.orders o
+LEFT JOIN core.customers c
+  ON o.customer_id = c.id
+LEFT JOIN core.geo_lookup gl
+  ON c.country_code = gl.country_code
+WHERE gl.region = 'APAC'
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 1;
+
+-- Of people who bought Apple products, which 5 customers have the top average order value, ranked from highest AOV to lowest AOV? 
+
+WITH aov_apple AS (
+  SELECT c.id as customer_id,
+    AVG(usd_price) as aov,
+  FROM core.orders o
+  LEFT JOIN core.customers c
+    ON o.customer_id = c.id
+  WHERE lower(product_name) LIKE '%macbook%' OR lower(product_name) LIKE '%apple%'
+  GROUP BY 1
+)
+
+SELECT *,
+  ROW_NUMBER() OVER (ORDER BY aov DESC) as customer_ranking
+FROM aov_apple
+  QUALIFY ROW_NUMBER() OVER (ORDER BY aov DESC) <= 5;
+
+-- Within each purchase platform, what are the top two marketing channels ranked by average order value?
+
+WITH marketing_sales as (
+  SELECT purchase_platform,
+    marketing_channel,
+    ROUND(AVG(usd_price), 2) as aov
+  FROM core.orders
+  LEFT JOIN core.customers
+    ON orders.customer_id = customers.id
+  GROUP BY 1,2)
+
+SELECT *,
+  ROW_NUMBER() OVER (PARTITION BY purchase_platform ORDER BY aov DESC) as ranking
+FROM marketing_sales
+QUALIFY ROW_NUMBER() OVER (PARTITION BY purchase_platform ORDER BY aov DESC) <= 2;
