@@ -60,7 +60,6 @@ The main points in our analysis are:
 | Growth Rate | (Current Month Value - Previous Month Value) / Previous Month Value <br> OR <br> (Current Month Value / Previous Month Value) - 1 |
 
 Initial data cleaning log can be found [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/source_data/elist_issue_log.xlsx)
-The Excel file with analysis can be found 
 
 ### Sales Trends
 ![image](https://github.com/user-attachments/assets/1611fe9f-ed65-40b8-9f18-89cc310b4c13)
