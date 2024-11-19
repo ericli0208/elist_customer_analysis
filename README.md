@@ -21,8 +21,6 @@ All analysis files (Excel and SQL) can be found [here](https://github.com/ericli
 
 ## Deep-Dive Insights
 
-### Overview
-
 | North Star Metrics  |
 |---|
 | Number of Orders |
