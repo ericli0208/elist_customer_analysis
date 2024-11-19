@@ -23,14 +23,6 @@ All analysis files (Excel and SQL) can be found [here](https://github.com/ericli
 
 ### Overview
 
-#### Initial Request
-
-The main points in our analysis are:
-- What were the overall trends in sales during this time?
-- What were our monthly and yearly growth rates? *(focusing on sales, average order value (AOV), and product count)*
-- How is the new loyalty program performing? Should we keep using it? *(focusing on sales, average order value (AOV), and product count)*
-- What were our refund rates and average order values? *(focusing on Apple products and also including number of refunds as a metric)*
-
 | North Star Metrics  |
 |---|
 | Number of Orders |
