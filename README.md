@@ -21,6 +21,8 @@ All analysis files (Excel and SQL) can be found [here](https://github.com/ericli
 
 ## Deep-Dive Insights
 
+### Our north star metrics and key dimensions for analysis are as follows: 
+
 | North Star Metrics  |
 |---|
 | Number of Orders |
