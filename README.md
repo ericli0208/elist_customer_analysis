@@ -19,6 +19,8 @@ The ERD for the dataset can be found [here](https://github.com/ericli0208/elist_
 
 All analysis files (Excel and SQL) can be found [here](https://github.com/ericli0208/elist_customer_analysis/tree/main/elist_analysis).
 
+The interactive Tableau dashboard for Sales and Order can be found [here](https://public.tableau.com/app/profile/ericli0208/viz/ElistAnalysis/Dashboard1)
+
 ## Deep-Dive Insights
 
 Our north star metrics and key dimensions for analysis are as follows: 
