@@ -15,7 +15,7 @@ There is an upcoming company-wide town hall, in which leadership would like to p
   
 The company has a core dataset consisting of orders, order statuses, customers, products, and geographic information. 
 
-The ERD for the dataset can be found [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/ERD.md).
+The ERD for the dataset can be found [here](https://github.com/ericli0208/elist_customer_analysis/blob/main/source_data/ERD.md).
 
 All analysis files (Excel and SQL) can be found [here](https://github.com/ericli0208/elist_customer_analysis/tree/main/elist_analysis).
 
